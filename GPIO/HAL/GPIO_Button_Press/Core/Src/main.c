@@ -202,8 +202,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+  //PC13 shares line 13 with both PA13 and PB13 as such the pin can be setup to just check the value on that line
 	if(GPIO_Pin == GPIO_PIN_13)
 	{
+    //Changes the output state for PA5 when button is pressed so high to low and vice versa
+		//Inside parenthesis must define the port which is A in this case and the pin which is 5
 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 	}
 }
