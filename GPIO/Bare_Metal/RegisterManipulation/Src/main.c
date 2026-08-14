@@ -66,11 +66,11 @@
 
 
 // 12: THE OFFSET FOR OUTPUT DATA REGISTER
-#define OD_R_OFFSET        (0X14UL)
+#define ODR_OFFSET        (0X14UL)
 
 
 // 13: THE ADDRESS OF GPIOA OUTPUT DATA REGISTER
-#define GPIOA_D_R           (*(volatile unsigned int*)(GPIOA_BASE + OD_R_OFFSET))
+#define GPIOA_ODR           (*(volatile unsigned int*)(GPIOA_BASE + ODR_OFFSET))
 
 // 14: THE BIT MASK FOR ENABLING GPIOA BIT 0
 #define GPIOAEN             (1U<<0)
@@ -83,25 +83,31 @@
 // 16: THE NAME ALIAS FOR PIN WHICH IS CONNECTED/REPRESENTING LED PIN
 #define LED_PIN             PIN5
 
-
+// Neccessary definition for using delay function
+void delay(volatile uint32_t count)
+{
+	while (count--);
+}
 
 int main(void)
 {
 // ENABLING CLOCK ACCESS TO GPIOA
 	RCC_AHB1EN_R |= GPIOAEN;
 
-//SETTING BIT 10 TO 1 ( ITS JUST TO TURN IT ON)
+// SETTING BIT 10 TO 1 IN ORDER TO SET MODER5 = 01 WHICH IS AN OUTPUT
 	GPIOA_MODE_R |= (1U << 10);
 
-// SETTING BIT 11 TO 0 (CLEARING BIT 11)
+// CLEARING BIT 11 TO BECOME 0 IN ORDER TO SET MODER5 = 01 WHICH IS AN OUTPUT
 	GPIOA_MODE_R &= ~(1U << 11);
 
 // THE START OF THE INFINTE LOOP
 	while (1)
 	{
-		// SETTING PA5 WHICH IS OUR LED PIN TO HIGH
-		GPIOA_D_R |= LED_PIN ;
+		// making it an XOR so that after every cycle its function gets reversed
+		GPIOA_ODR ^= LED_PIN;
+		delay(1000000);
+
 	}
-    /* Loop forever */
+
 
 }
