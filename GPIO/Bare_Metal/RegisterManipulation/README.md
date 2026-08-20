@@ -6,7 +6,7 @@ This project made use of direct register-level GPIO configuration, by use of mem
 - Pin : PA5 connected to onboard green LED
 
 # What it does 
-First, PA5 is configured as an output. Afterwards inside of a loop, XOR is used in order change the current state of the pin after every run. Which
+First, PA5 is configured as an output. Afterwards inside of a loop, XOR is used in order to change the current state of the pin after every run. Which
 in turn results in the LED turning on or off depending if it is high and swapped to low.
 
 # Key Concepts
