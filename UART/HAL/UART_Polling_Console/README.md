@@ -46,7 +46,7 @@ Unknown command, press h
 
 ## Comparison to Interrupt mode
 
-By using HAL_MAX_DELAY blocks the CPU until an input is received, so nothing else can run while the console waits. 
-By doing an interrupt-driven version it would receive the keys from the background with HAL_UART_Receive_IT and 
-leave the main loop free for other tasks. Possible other tasks could be blinking an LED or sending a message. 
+Using HAL_MAX_DELAY in HAL_UART_Receive blocks the CPU until a key is received, so nothing else can run while the console waits. 
+An interrupt-driven version it would receive the keys in the background with HAL_UART_Receive_IT and 
+leave the main loop free for other tasks such as tasks blinking an LED or sending periodic status messages. 
 
