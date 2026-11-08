@@ -1,4 +1,4 @@
-# UART-Polling_Console
+# UART_Polling_Console
 
 This project made use of the STM32 HAL library to build a single-key command console over UART. It uses polling: the CPU waits for each individual key input instead of using interrupts.
 
