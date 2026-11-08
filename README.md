@@ -3,7 +3,7 @@ A hands-on learning repository for embedded systems development using STM32 micr
 
 **Hardware:** NUCLEO-F446RE (STM32F446, Cortex-M4) · NUCLEO-H753ZI (Cortex-M7) for advanced topics
 **Tools:** STM32CubeIDE, CubeMX, arm-none-eabi-gcc, Make, OpenOCD, GDB
-**References:** RM0390 reference manual, UM1724 board manual, Mastering STM32, Stm32f446re Schematic, stm32f446mc Datasheet
+**References:** RM0390 reference manual, UM1724 board manual, Mastering STM32, Stm32f446re Schematic, stm32f446 Datasheet
 
 ## Projects
 
