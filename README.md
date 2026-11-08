@@ -12,9 +12,14 @@ A hands-on learning repository for embedded systems development using STM32 micr
 | GPIO | LED Blink / Register Manipulation | ✅ | ✅ | Toggle LD2 (PA5) via RCC/MODER/ODR registers |
 | GPIO | Button Interrupt | ✅ | — | PC13 falling-edge EXTI toggles LD2 |
 | UART | Polling & Interrupt-Driven Serial | 🚧 | 🚧 | In progress |
+| DMA | Polling & Interrupt-Driven Serial | 🚧 | 🚧 | In progress |
+| Timers/PWM | Polling & Interrupt-Driven Serial | 🚧 | 🚧 | In progress |
+| ADC | Polling & Interrupt-Driven Serial | 🚧 | 🚧 | In progress |
+| I2C | Polling & Interrupt-Driven Serial | 🚧 | 🚧 | In progress |
+| SPI |                                   |    | 🚧 | In progress |
 
 ## Roadmap
-GPIO → Interrupts/NVIC → UART → DMA → Timers/PWM → I2C → SPI → ADC
+GPIO → Interrupts/NVIC → UART → DMA → Timers/PWM → ADC → I2C → SPI 
 → **Capstone:** BME280 environmental data logger (I2C sensor, timer-driven sampling, UART streaming)
 
 ## Repo Structure
